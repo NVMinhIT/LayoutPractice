@@ -23,7 +23,9 @@ object DataServices {
     val listStatus = listOf(
         Status(
             UUID.randomUUID().toString(), listUser[0].userId, listUser[0].userName, listUser[0].userImage,
-            "it is good time!!", "", null, "123", "12",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+                    + "Nunc fringilla cursus sodales. Proin hendrerit tempor purus eu posuere.",
+            "", null, "123", "12",
             (System.currentTimeMillis() + 10)
         ),
         Status(
@@ -48,7 +50,10 @@ object DataServices {
         ),
         Status(
             UUID.randomUUID().toString(), listUser[3].userId, listUser[3].userName, listUser[3].userImage,
-            "it is beautiful time", "https://mqttprject.000webhostapp.com/image/images.jpeg", null,
+            "Lorem ipsum dolor sit amet, " +
+                    "consectetur adipiscing elit. Nunc fringilla cursus sodales. " +
+                    "Proin hendrerit tempor purus eu posuere.",
+            "https://mqttprject.000webhostapp.com/image/images.jpeg", null,
             "12", "12", (System.currentTimeMillis() + 1000)
         )
     )

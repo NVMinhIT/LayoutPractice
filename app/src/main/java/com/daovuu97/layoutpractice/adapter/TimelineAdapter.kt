@@ -48,7 +48,7 @@ class TimelineAdapter(
             .centerCrop()
             .into(holder.userImage)
         holder.userName.text = status.userName
-        val time = Date(System.currentTimeMillis() - status.time)
+        val time = Date(status.time)
         holder.time.text = DateFormat.getTimeInstance(DateFormat.SHORT).format(time).toString()
         if (status.listConnecttion == null) {
             if (status.text.equals("")) {
