@@ -1,5 +1,6 @@
 package com.daovuu97.layoutpractice.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -39,6 +40,7 @@ class TimelineAdapter(
         updateView(holder, currentStatus)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun updateView(holder: ViewHolder, status: Status) {
         Glide.with(context)
             .load(status.userImage)
@@ -46,8 +48,8 @@ class TimelineAdapter(
             .centerCrop()
             .into(holder.userImage)
         holder.userName.text = status.userName
-        val time: Date = Date(status.time)
-        holder.time.text = DateFormat.getDateInstance().format(time).toString()
+        val time = Date(System.currentTimeMillis() - status.time)
+        holder.time.text = DateFormat.getTimeInstance(DateFormat.SHORT).format(time).toString()
         if (status.listConnecttion == null) {
             if (status.text.equals("")) {
                 holder.text.visibility = View.GONE

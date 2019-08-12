@@ -2,51 +2,54 @@ package com.daovuu97.layoutpractice.service
 
 import com.daovuu97.layoutpractice.model.Status
 import com.daovuu97.layoutpractice.model.User
+import java.util.*
 
 object DataServices {
     val listUser = listOf(
-        User("peter", "https://mqttprject.000webhostapp.com/image/tawdasd.jpeg"),
-        User("dao vu", "https://mqttprject.000webhostapp.com/image/maxresdefault.jpg"),
-        User("mete", "https://mqttprject.000webhostapp.com/image/270px-Atkinson_Rowan.jpg")
+        User(
+            UUID.randomUUID().toString(),
+            "Ronaldo",
+            "https://mqttprject.000webhostapp.com/image/cristiano-ronaldo.jpg"
+        ),
+        User(UUID.randomUUID().toString(), "Messi", "https://mqttprject.000webhostapp.com/image/messi.jpg"),
+        User(UUID.randomUUID().toString(), "Pogba", "https://mqttprject.000webhostapp.com/image/Paul_Pogba.jpg"),
+        User(UUID.randomUUID().toString(), "Phuong", "https://mqttprject.000webhostapp.com/image/congphuong.jpg")
     )
 
     val listUser1 = listOf(
-        User("peter", "https://mqttprject.000webhostapp.com/image/tawdasd.jpeg"),
-        User("dao vu", "https://mqttprject.000webhostapp.com/image/maxresdefault.jpg"),
-        User("mete", "https://mqttprject.000webhostapp.com/image/270px-Atkinson_Rowan.jpg"),
-        User("dao vu", "https://mqttprject.000webhostapp.com/image/maxresdefault.jpg"),
-        User("mete", "https://mqttprject.000webhostapp.com/image/270px-Atkinson_Rowan.jpg")
+        User(listUser[0].userId, "Ronaldo", "https://mqttprject.000webhostapp.com/image/cristiano-ronaldo.jpg"),
+        User(listUser[2].userId, "Pogba", "https://mqttprject.000webhostapp.com/image/Paul_Pogba.jpg")
     )
     val listStatus = listOf(
-        Status("tommy", "https://mqttprject.000webhostapp.com/image/tawdasd.jpeg",
+        Status(
+            UUID.randomUUID().toString(), listUser[0].userId, listUser[0].userName, listUser[0].userImage,
             "it is good time!!", "", null, "123", "12",
-            (System.currentTimeMillis()+10)
+            (System.currentTimeMillis() + 10)
         ),
-        Status("peter", "https://mqttprject.000webhostapp.com/image/maxresdefault.jpg",
+        Status(
+            UUID.randomUUID().toString(), listUser[1].userId, listUser[1].userName, listUser[1].userImage,
             "Has ${listUser.size} new connections", "", listUser, "123", "12",
-            (System.currentTimeMillis()+1200)
+            (System.currentTimeMillis() + 1200)
         ),
-        Status("halo", "https://mqttprject.000webhostapp.com/image/270px-Atkinson_Rowan.jpg",
+        Status(
+            UUID.randomUUID().toString(), listUser[2].userId, listUser[2].userName, listUser[2].userImage,
             "", "https://mqttprject.000webhostapp.com/image/images.jpeg", null,
-            "12", "12", (System.currentTimeMillis()+1000)
+            "12", "12", (System.currentTimeMillis() + 1000)
         ),
-        Status("halo", "https://mqttprject.000webhostapp.com/image/tawdasd.jpeg",
+        Status(
+            UUID.randomUUID().toString(), listUser[3].userId, listUser[3].userName, listUser[3].userImage,
             "hello everyone i love you ", "", null, "1223",
             "122", System.currentTimeMillis()
         ),
-        Status("peter", "https://mqttprject.000webhostapp.com/image/maxresdefault.jpg",
-        "Has ${listUser1.size} new connections", "", listUser1, "123", "12",
-        (System.currentTimeMillis()+1200)
-         ),
-        Status("jenny", "https://mqttprject.000webhostapp.com/image/270px-Atkinson_Rowan.jpg",
-        "it is beautiful time", "https://mqttprject.000webhostapp.com/image/images.jpeg", null,
-        "12", "12", (System.currentTimeMillis()+1000)
+        Status(
+            UUID.randomUUID().toString(), listUser[0].userId, listUser[0].userName, listUser[0].userImage,
+            "Has ${listUser1.size} new connections", "", listUser1, "123", "12",
+            (System.currentTimeMillis() + 1200)
         ),
-        Status("tren", "https://mqttprject.000webhostapp.com/image/tawdasd.jpeg",
-        "hello everyone i love you ", "", null, "1223",
-        "122", System.currentTimeMillis()
+        Status(
+            UUID.randomUUID().toString(), listUser[3].userId, listUser[3].userName, listUser[3].userImage,
+            "it is beautiful time", "https://mqttprject.000webhostapp.com/image/images.jpeg", null,
+            "12", "12", (System.currentTimeMillis() + 1000)
         )
-
-
     )
 }

@@ -32,7 +32,7 @@
                     android:adjustViewBounds="true"
                     android:cropToPadding="true"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/combined_shape_10492"
+                    app:srcCompat="@drawable/menu"
                     android:id="@+id/imageButton"/>
 
             <TextView
@@ -51,7 +51,7 @@
                     android:adjustViewBounds="true"
                     android:cropToPadding="true"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/combined_shape_10528"
+                    app:srcCompat="@drawable/edit"
                     android:id="@+id/imageButton2"/>
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
