@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">LayoutPractice</string>
-    <string name="email_edittext_hint">Email</string>
-    <string name="password_edittext_hint">Password</string>
+    <string name="registration_email_hint">Email</string>
+    <string name="registration_password_hint">Password</string>
     <string name="login_button_title">LOGIN</string>
     <string name="create_account_button_title">CREATE ACCOUNT</string>
-    <string name="or_textview">OR</string>
+    <string name="text_or">OR</string>
     <string name="timeline_activity_title">Timeline</string>
 </resources>

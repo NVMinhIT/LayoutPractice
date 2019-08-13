@@ -36,7 +36,7 @@
             android:background="@drawable/edittext_background"
             app:layout_constraintWidth_percent="0.844"
             app:layout_constraintDimensionRatio="633:111"
-            android:hint="@string/email_edittext_hint"
+            android:hint="@string/registration_email_hint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="62dp"
@@ -47,7 +47,7 @@
             android:inputType="textPassword"
             app:layout_constraintWidth_percent="0.844"
             app:layout_constraintDimensionRatio="633:111"
-            android:hint="@string/password_edittext_hint"
+            android:hint="@string/registration_password_hint"
             android:id="@+id/input_password"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +84,7 @@
             app:layout_constraintTop_toBottomOf="@+id/login_button"/>
 
     <TextView
-            android:text="@string/or_textview"
+            android:text="@string/text_or"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:layout_width="wrap_content"
