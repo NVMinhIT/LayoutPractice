@@ -13,6 +13,7 @@ import com.daovuu97.layoutpractice.model.User
 import com.daovuu97.layoutpractice.service.DataServices
 
 class TimeLineActivity : AppCompatActivity() {
+
     private lateinit var mRecyclerView: RecyclerView
     private lateinit var mAdapter: TimelineAdapter
     private lateinit var listStatus: List<Status>
@@ -28,6 +29,8 @@ class TimeLineActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@TimeLineActivity)
             adapter = mAdapter
         }
+
+
 
     }
 
