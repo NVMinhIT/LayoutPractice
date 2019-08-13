@@ -48,7 +48,7 @@ class TimelineAdapter(
         holder.time.text = DateFormat.getTimeInstance(DateFormat.SHORT).format(time).toString()
         if (status.listConnecttion == null) {
             if (status.text == "") holder.text.visibility = View.GONE
-             else {
+            else {
                 holder.text.visibility = View.VISIBLE
                 holder.text.text = status.text
                 holder.connection.visibility = View.GONE
