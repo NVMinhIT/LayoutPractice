@@ -116,7 +116,7 @@
     <ImageButton
             app:layout_constraintWidth_percent="0.047"
             app:layout_constraintDimensionRatio="1:1"
-            style="@style/image_button_no_background"
+            style="@style/ImageButtonNoBackground"
             app:srcCompat="@drawable/heart"
             android:id="@+id/like_button"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -129,7 +129,7 @@
     <ImageButton
             app:layout_constraintWidth_percent="0.047"
             app:layout_constraintDimensionRatio="1:1"
-            style="@style/image_button_no_background"
+            style="@style/ImageButtonNoBackground"
             app:srcCompat="@drawable/comment"
             android:id="@+id/comment_button"
             app:layout_constraintTop_toTopOf="@+id/like_button"
@@ -141,7 +141,7 @@
 
     <TextView
             android:text="300"
-            style="@style/text_view_like_comment"
+            style="@style/TexTStyle1"
             app:layout_constraintWidth_percent="0.093"
             android:id="@+id/like_count"
             app:layout_constraintStart_toEndOf="@+id/like_button"
@@ -151,7 +151,7 @@
 
     <TextView
             android:text="300"
-            style="@style/text_view_like_comment"
+            style="@style/TexTStyle1"
             app:layout_constraintWidth_percent="0.093"
             android:id="@+id/comment_count"
             app:layout_constraintStart_toEndOf="@+id/comment_button"
