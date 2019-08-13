@@ -2,6 +2,9 @@ package com.daovuu97.layoutpractice.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.LayerDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,11 +14,11 @@ import androidx.constraintlayout.widget.Group
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.daovuu97.layoutpractice.R
 import com.daovuu97.layoutpractice.model.Status
 import de.hdodenhof.circleimageview.CircleImageView
 import java.text.DateFormat
-import java.util.*
+import java.text.SimpleDateFormat
+
 
 class TimelineAdapter(
     private val context: Context,
@@ -23,7 +26,7 @@ class TimelineAdapter(
 ) : RecyclerView.Adapter<TimelineAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.timeline_item, parent, false)
+        val view = inflater.inflate(com.daovuu97.layoutpractice.R.layout.timeline_item, parent, false)
         return ViewHolder(view)
     }
 
@@ -34,9 +37,23 @@ class TimelineAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentStatus: Status = listStatus[position]
         updateView(holder, currentStatus)
+
+        if (position == 0) {
+            holder.beforeDot.visibility = View.GONE
+
+        } else {
+            holder.beforeDot.visibility = View.VISIBLE
+            holder.beforeDot.setBackgroundResource(listStatus[position - 1].color)
+        }
+        val color = ColorDrawable(context.resources.getColor(currentStatus.color))
+        val image = context.resources.getDrawable(com.daovuu97.layoutpractice.R.drawable.dot_background)
+        val ld = LayerDrawable(arrayOf<Drawable>(color, image))
+
+        holder.dot.setImageDrawable(ld)
+        holder.afterDot.setBackgroundResource(currentStatus.color)
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "SimpleDateFormat")
     private fun updateView(holder: ViewHolder, status: Status) {
         Glide.with(context)
             .load(status.userImage)
@@ -44,8 +61,9 @@ class TimelineAdapter(
             .centerCrop()
             .into(holder.userImage)
         holder.userName.text = status.userName
-        val time = Date(status.time)
-        holder.time.text = DateFormat.getTimeInstance(DateFormat.SHORT).format(time).toString()
+        val format: DateFormat = SimpleDateFormat("H:mm")
+        val time = format.format(System.currentTimeMillis() - status.time)
+        holder.time.text = "$time ago"
         if (status.listConnecttion == null) {
             if (status.text == "") holder.text.visibility = View.GONE
             else {
@@ -79,17 +97,21 @@ class TimelineAdapter(
                 layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             }
         }
+
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val userImage: CircleImageView = itemView.findViewById(R.id.profile_image)
-        val userName: TextView = itemView.findViewById(R.id.profile_name)
-        val text: TextView = itemView.findViewById(R.id.text_timeline)
-        val image: ImageView = itemView.findViewById(R.id.image)
-        val likeCount: TextView = itemView.findViewById(R.id.like_count)
-        val commentCount: TextView = itemView.findViewById(R.id.comment_count)
-        val connection: RecyclerView = itemView.findViewById(R.id.list_connection)
-        val group: Group = itemView.findViewById(R.id.group)
-        val time: TextView = itemView.findViewById(R.id.time_timeline)
+        val userImage: CircleImageView = itemView.findViewById(com.daovuu97.layoutpractice.R.id.profile_image)
+        val userName: TextView = itemView.findViewById(com.daovuu97.layoutpractice.R.id.profile_name)
+        val text: TextView = itemView.findViewById(com.daovuu97.layoutpractice.R.id.text_timeline)
+        val image: ImageView = itemView.findViewById(com.daovuu97.layoutpractice.R.id.image)
+        val likeCount: TextView = itemView.findViewById(com.daovuu97.layoutpractice.R.id.like_count)
+        val commentCount: TextView = itemView.findViewById(com.daovuu97.layoutpractice.R.id.comment_count)
+        val connection: RecyclerView = itemView.findViewById(com.daovuu97.layoutpractice.R.id.list_connection)
+        val group: Group = itemView.findViewById(com.daovuu97.layoutpractice.R.id.group)
+        val time: TextView = itemView.findViewById(com.daovuu97.layoutpractice.R.id.time_timeline)
+        val beforeDot: View = itemView.findViewById(com.daovuu97.layoutpractice.R.id.before_dot)
+        val afterDot: View = itemView.findViewById(com.daovuu97.layoutpractice.R.id.after_dot)
+        val dot: CircleImageView = itemView.findViewById(com.daovuu97.layoutpractice.R.id.dot)
     }
 }

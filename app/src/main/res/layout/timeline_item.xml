@@ -7,16 +7,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <View
+    <de.hdodenhof.circleimageview.CircleImageView
+            app:civ_circle_background_color="@color/baby_blue"
             android:layout_width="0dp"
-            android:background="@drawable/dot_background"
             android:layout_height="0dp"
+            app:civ_border_width="0dp"
+            app:civ_border_color="#FF000000"
             app:layout_constraintWidth_percent="0.036"
             app:layout_constraintDimensionRatio="1:1"
-            android:id="@+id/view"
+            android:id="@+id/dot"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="26dp"
-            app:layout_constraintStart_toStartOf="@+id/guideline"/>
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            />
 
     <de.hdodenhof.circleimageview.CircleImageView
             app:layout_constraintWidth_percent="0.084"
@@ -29,7 +32,7 @@
             app:civ_border_color="#FF000000"
             android:layout_marginTop="16dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintStart_toEndOf="@+id/dot"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"/>
@@ -172,6 +175,30 @@
             android:id="@+id/view3"
             app:layout_constraintStart_toStartOf="@+id/profile_image"
             app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+            app:layout_constraintWidth_percent="0.0026"
+            android:background="#000"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/dot"
+            app:layout_constraintEnd_toEndOf="@+id/dot"
+            app:layout_constraintStart_toStartOf="@+id/dot"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="4dp"
+            android:id="@+id/before_dot"/>
+
+    <View
+            app:layout_constraintWidth_percent="0.0026"
+            android:background="#000"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/after_dot"
+            app:layout_constraintStart_toStartOf="@+id/dot"
+            app:layout_constraintEnd_toEndOf="@+id/dot"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/dot"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
