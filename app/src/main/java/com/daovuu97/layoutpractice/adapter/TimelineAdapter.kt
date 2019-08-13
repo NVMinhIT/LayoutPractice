@@ -19,7 +19,6 @@ import de.hdodenhof.circleimageview.CircleImageView
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 
-
 class TimelineAdapter(
     private val context: Context,
     private val listStatus: List<Status>
