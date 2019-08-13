@@ -51,7 +51,7 @@ class TimelineAdapter(
         val time = Date(status.time)
         holder.time.text = DateFormat.getTimeInstance(DateFormat.SHORT).format(time).toString()
         if (status.listConnecttion == null) {
-            if (status.text.equals("")) holder.text.visibility = View.GONE
+            if (status.text == "") holder.text.visibility = View.GONE
              else {
                 holder.text.visibility = View.VISIBLE
                 holder.text.text = status.text
@@ -76,7 +76,7 @@ class TimelineAdapter(
             holder.image.visibility = View.GONE
             holder.group.visibility = View.GONE
             holder.text.text = status.text
-            val mAdapter: ListUserAdapter = ListUserAdapter(context, status.listConnecttion)
+            val mAdapter = ListUserAdapter(context, status.listConnecttion)
             holder.connection.apply {
                 visibility = View.VISIBLE
                 adapter = mAdapter
