@@ -31,7 +31,7 @@
 
     <EditText
             android:id="@+id/input_email"
-            style="@style/editText_login"
+            style="@style/InputLogin"
             android:inputType="textEmailAddress"
             android:background="@drawable/input_text_bg"
             app:layout_constraintWidth_percent="0.844"
@@ -43,7 +43,7 @@
             app:layout_constraintTop_toBottomOf="@+id/logo"/>
 
     <EditText
-            style="@style/editText_login"
+            style="@style/InputLogin"
             android:inputType="textPassword"
             app:layout_constraintWidth_percent="0.844"
             app:layout_constraintDimensionRatio="633:111"
@@ -55,7 +55,7 @@
             app:layout_constraintTop_toBottomOf="@+id/input_email"/>
 
     <Button
-            style="@style/button_login"
+            style="@style/ButtonLogin"
             android:text="@string/login_button_title"
             android:background="@drawable/login_button_bg"
             app:layout_constraintWidth_percent="0.844"
@@ -69,7 +69,7 @@
             app:layout_constraintTop_toBottomOf="@+id/input_password"/>
 
     <Button
-            style="@style/button_login"
+            style="@style/ButtonLogin"
             android:text="@string/create_account_button_title"
             android:background="@drawable/input_text_bg"
             app:layout_constraintWidth_percent="0.844"

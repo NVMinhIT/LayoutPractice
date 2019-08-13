@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="editText_login" parent="@android:style/TextAppearance.Medium">
+    <style name="InputLogin" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">0dp</item>
         <item name="android:background">@drawable/input_text_bg</item>
         <item name="android:layout_height">0dp</item>
@@ -20,19 +20,19 @@
         <item name="android:paddingTop">12dp</item>
     </style>
 
-    <style name="button_login" parent="@style/Widget.AppCompat.Button">
+    <style name="ButtonLogin" parent="@style/Widget.AppCompat.Button">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="image_button_no_background" parent="@style/Widget.AppCompat.ImageButton">
+    <style name="ImageButtonNoBackground" parent="@style/Widget.AppCompat.ImageButton">
         <item name="android:background">@null</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>
     </style>
 
-    <style name="text_view_like_comment" parent="@android:style/TextAppearance.Medium">
+    <style name="TexTStyle1" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">16sp</item>
