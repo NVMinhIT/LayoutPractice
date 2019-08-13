@@ -33,7 +33,7 @@
             android:id="@+id/input_email"
             style="@style/editText_login"
             android:inputType="textEmailAddress"
-            android:background="@drawable/edittext_background"
+            android:background="@drawable/input_text_bg"
             app:layout_constraintWidth_percent="0.844"
             app:layout_constraintDimensionRatio="633:111"
             android:hint="@string/registration_email_hint"
@@ -57,7 +57,7 @@
     <Button
             style="@style/button_login"
             android:text="@string/login_button_title"
-            android:background="@drawable/btn_login_background"
+            android:background="@drawable/login_button_bg"
             app:layout_constraintWidth_percent="0.844"
             app:layout_constraintDimensionRatio="633:111"
             android:id="@+id/login_button"
@@ -71,7 +71,7 @@
     <Button
             style="@style/button_login"
             android:text="@string/create_account_button_title"
-            android:background="@drawable/create_account_button_background"
+            android:background="@drawable/input_text_bg"
             app:layout_constraintWidth_percent="0.844"
             app:layout_constraintDimensionRatio="633:111"
             android:textColor="@color/white"
