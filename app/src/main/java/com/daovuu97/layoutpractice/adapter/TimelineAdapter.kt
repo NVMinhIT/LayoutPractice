@@ -31,10 +31,6 @@ class TimelineAdapter(
         return listStatus.size
     }
 
-    public fun getStatusAt(position: Int): Status {
-        return listStatus[position]
-    }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentStatus: Status = listStatus[position]
         updateView(holder, currentStatus)
