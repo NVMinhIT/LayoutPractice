@@ -51,19 +51,17 @@ class TimelineAdapter(
         val time = Date(status.time)
         holder.time.text = DateFormat.getTimeInstance(DateFormat.SHORT).format(time).toString()
         if (status.listConnecttion == null) {
-            if (status.text.equals("")) {
-                holder.text.visibility = View.GONE
-            } else {
+            if (status.text.equals("")) holder.text.visibility = View.GONE
+             else {
                 holder.text.visibility = View.VISIBLE
                 holder.text.text = status.text
                 holder.connection.visibility = View.GONE
                 holder.likeCount.text = status.like
-                holder.commectCount.text = status.comment
+                holder.commentCount.text = status.comment
             }
 
-            if (status.image.isEmpty() || status.image.isBlank()) {
-                holder.image.visibility = View.GONE
-            } else {
+            if (status.image.isEmpty() || status.image.isBlank()) holder.image.visibility = View.GONE
+            else {
                 holder.image.visibility = View.VISIBLE
                 Glide.with(context)
                     .load(status.image)
@@ -71,7 +69,7 @@ class TimelineAdapter(
                     .into(holder.image)
                 holder.connection.visibility = View.GONE
                 holder.likeCount.text = status.like
-                holder.commectCount.text = status.comment
+                holder.commentCount.text = status.comment
             }
         } else {
             holder.text.visibility = View.VISIBLE
@@ -93,7 +91,7 @@ class TimelineAdapter(
         val text: TextView = itemView.findViewById(R.id.text_timeline)
         val image: ImageView = itemView.findViewById(R.id.image)
         val likeCount: TextView = itemView.findViewById(R.id.like_count)
-        val commectCount: TextView = itemView.findViewById(R.id.comment_count)
+        val commentCount: TextView = itemView.findViewById(R.id.comment_count)
         val connection: RecyclerView = itemView.findViewById(R.id.list_connection)
         val group: Group = itemView.findViewById(R.id.group)
         val time: TextView = itemView.findViewById(R.id.time_timeline)

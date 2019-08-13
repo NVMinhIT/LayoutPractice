@@ -25,10 +25,10 @@ class ListUserAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentUser:User = listUser[position]
+        val currentUser: User = listUser[position]
         Glide.with(context)
             .load(currentUser.userImage)
-            .override(200,200)
+            .override(200, 200)
             .centerCrop()
             .into(holder.userImage)
     }

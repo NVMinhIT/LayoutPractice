@@ -13,7 +13,7 @@ import com.daovuu97.layoutpractice.model.User
 import com.daovuu97.layoutpractice.service.DataServices
 
 class TimeLineActivity : AppCompatActivity() {
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var mRecyclerView: RecyclerView
     private lateinit var mAdapter: TimelineAdapter
     private lateinit var listStatus: List<Status>
     private lateinit var listUser: List<User>
@@ -22,9 +22,9 @@ class TimeLineActivity : AppCompatActivity() {
         setContentView(R.layout.activity_time_line)
         listUser = DataServices.listUser
         listStatus = DataServices.listStatus
-        recyclerView = findViewById(R.id.list_status)
+        mRecyclerView = findViewById(R.id.list_status)
         mAdapter = TimelineAdapter(this, listStatus)
-        recyclerView.apply {
+        mRecyclerView.apply {
             layoutManager = LinearLayoutManager(this@TimeLineActivity)
             adapter = mAdapter
         }

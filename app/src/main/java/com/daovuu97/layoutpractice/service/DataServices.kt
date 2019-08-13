@@ -6,11 +6,7 @@ import java.util.*
 
 object DataServices {
     val listUser = listOf(
-        User(
-            UUID.randomUUID().toString(),
-            "Ronaldo",
-            "https://mqttprject.000webhostapp.com/image/cristiano-ronaldo.jpg"
-        ),
+        User(UUID.randomUUID().toString(), "Ronaldo", "https://mqttprject.000webhostapp.com/image/cristiano-ronaldo.jpg"),
         User(UUID.randomUUID().toString(), "Messi", "https://mqttprject.000webhostapp.com/image/messi.jpg"),
         User(UUID.randomUUID().toString(), "Pogba", "https://mqttprject.000webhostapp.com/image/Paul_Pogba.jpg"),
         User(UUID.randomUUID().toString(), "Phuong", "https://mqttprject.000webhostapp.com/image/congphuong.jpg")
